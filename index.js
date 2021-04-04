@@ -63,13 +63,13 @@ window.addEventListener('DOMContentLoaded',() => {
         })
         if(window.pageYOffset <= section2) {
             menu1.classList.add('active');
-        } else if(window.pageYOffset >= section2 && window.pageYOffset <= section3) {
+        } else if(window.pageYOffset >= section2 && window.pageYOffset < section3) {
             menu2.classList.add('active');
-        } else if(window.pageYOffset >= section3 && window.pageYOffset <= section4) {
+        } else if(window.pageYOffset >= section3 && window.pageYOffset < section4) {
             menu3.classList.add('active');
-        } else if(window.pageYOffset >= section4 && window.pageYOffset <= section5) {
+        } else if(window.pageYOffset >= section4 && window.pageYOffset < section5) {
             menu4.classList.add('active');
-        } else if(window.pageYOffset >= section5 && window.pageYOffset <= section6) {
+        } else if(window.pageYOffset >= section5 && window.pageYOffset < section6) {
             menu5.classList.add('active');
         } else if(window.pageYOffset >= section6) {
             menu6.classList.add('active');

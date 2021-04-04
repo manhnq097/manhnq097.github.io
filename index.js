@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded',() => {
                 menu6 = e;
             }
         })
-        if(window.pageYOffset <= section2) {
+        if(window.pageYOffset < section2) {
             menu1.classList.add('active');
         } else if(window.pageYOffset >= section2 && window.pageYOffset < section3) {
             menu2.classList.add('active');

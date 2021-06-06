@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+$primary: #0187F8;
+.mt-5 {margin-top: 5px}
+.mr-5 {margin-right: 5px}
+.mb-5 {margin-bottom: 5px}
+.ml-5 {margin-left: 5px}
+.mt-10 {margin-top: 10px}
+.mr-10 {margin-right: 10px}
+.mb-10 {margin-bottom: 10px}
+.ml-10 {margin-left: 10px}
+.mt-20 {margin-top: 20px}
+.mr-20 {margin-right: 20px}
+.mb-20 {margin-bottom: 20px}
+.ml-20 {margin-left: 20px}
+#root {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+    &:before {
+        content : '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 0;
+    }
+}
+.pages {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    transition: .5s;
+    position: relative;
+    .page {
+        width: 1920px;
+        height: 100%;
+        padding: 0 180px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 88px;
+    &:hover {
+        color: $primary;
+    }
+}
+
+#prevBtn {
+    left: 50px;
+}
+#nextBtn {
+    right: 50px;
+}
+
+.avatar {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+.fullname {
+    font-size: 72px;
+    text-transform: uppercase;
+}
+.position {
+    font-size: 48px;
+}
+
+.social-media {
+    li {
+        display: inline-block;
+        a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 50px;
+            background-color: #333333;
+            &:hover {
+                opacity: .8;
+            }
+            &.facebook {
+                background-color: #0D8AF0;
+            }
+            &.instagram {
+                background-color: #DE1B85;
+            }
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    margin-left: -30px;
+    margin-right: -230px;
+    .col {
+        flex-basis: 50%;
+        padding-left: 30px;
+        padding-right: 30px;
+        &.col-left {
+            text-align: right;
+        }
+        &.col-right {
+            text-align: left;
+        }
+    }
+}
+
+p {
+    margin-bottom: 10px;
+}

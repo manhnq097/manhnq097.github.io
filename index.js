@@ -1,31 +1,31 @@
-const WIDTH_PAGE = document.documentElement.clientWidth || document.body.clientWidth;
+var WIDTH_PAGE = document.documentElement.clientWidth || document.body.clientWidth;
 const pagesBlock = document.querySelector('.pages');
 const pages = [...document.querySelectorAll('.page')];
 const nextBtn = document.querySelector('#nextBtn');
 const prevBtn = document.querySelector('#prevBtn');
 let index = 0;
 pagesBlock.style.width = `${WIDTH_PAGE * pages.length}px`;
-
+window.addEventListener('resize', () => {
+    WIDTH_PAGE = document.documentElement.clientWidth || document.body.clientWidth;
+    pagesBlock.style.width = `${WIDTH_PAGE * pages.length}px`;
+    pagesBlock.style.transform = `translateX(-${WIDTH_PAGE * index}px)`
+});
 const next = () => {
     if (index < pages.length - 1) {
         index += 1;
         pagesBlock.style.transform = `translateX(-${WIDTH_PAGE * index}px)`
     };
     if (index == 0) {
-        prevBtn.style.display = 'none';
+        prevBtn.classList.add('disable');
     } else {
-        prevBtn.style.display = 'flex';
+        prevBtn.classList.remove('disable');
     }
     if (index == pages.length - 1) {
-        nextBtn.style.display = 'none';
+        nextBtn.classList.add('disable');
     } else {
-        nextBtn.style.display = 'flex';
+        nextBtn.classList.remove('disable');
     }
 };
-
-pagesBlock.addEventListener('touchmove', () => {
-    console.log("hihi")
-})
 
 const prev = () => {
     if (index > 0) {
@@ -33,20 +33,20 @@ const prev = () => {
         pagesBlock.style.transform = `translateX(-${WIDTH_PAGE * index}px)`
     }
     if (index == 0) {
-        prevBtn.style.display = 'none';
+        prevBtn.classList.add('disable');
     } else {
-        prevBtn.style.display = 'flex';
+        prevBtn.classList.remove('disable');
     }
     if (index == pages.length - 1) {
-        nextBtn.style.display = 'none';
+        nextBtn.classList.add('disable');
     } else {
-        nextBtn.style.display = 'flex';
+        nextBtn.classList.remove('disable');
     }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
     if (index == 0) {
-        prevBtn.style.display = 'none';
+        prevBtn.classList.add('disable');
     }
 })
 
